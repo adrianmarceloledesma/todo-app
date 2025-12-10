@@ -1,13 +1,16 @@
 .todo-item{
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     width: 91%; /*mobile first*/
     padding:5px 10px;
     background-color: #ffcf4035;
     border: 1px solid #e1e5e9;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 14px;
     margin: 5px 0;
+    word-break: break-word; /* ← Evita que el texto se salga */
+    overflow-wrap: break-word; /* ← Asegura que las palabras largas se rompan */
 }
 h1 {
   background: linear-gradient(135deg, #667eea 0%, #007bff 100%);
@@ -21,7 +24,8 @@ h1 {
 .todo-item .delete-but{
     position: absolute;
     right: 5px;
-    transform: translateY(-20%);
+    top:50%;
+    transform: translateY(-50%);
     background-color: #ffcf4000;
     color:rgb(255, 165, 165);
     border: none;
@@ -35,18 +39,21 @@ h1 {
 .todo-item .delete-but:hover{
     color:red;
     font-size: 30px;
-    transform: translateY(-40%);
+    transform: translateY(-70%);
 }
-
 
 .todo-item .completed{
     text-decoration: line-through;
     color: gray;
 }
 
-.todo-item span{
-    margin-left: 35px;
+.todo-item .completed, .incompleted{
+  margin-top: 12px;
+   margin-left: 35px;
+   margin-right: 35px;
+   word-break: break-word;
 }
+
 
 .todo-item .checkbox {
   appearance: none;
@@ -56,13 +63,12 @@ h1 {
   transform: translateY(-50%);
   width: 22px;
   height: 22px;
-  
   opacity: 0; /* ← Hacelo invisible pero CLICKEABLE */
   z-index: 2; /* ← POR ENCIMA de todo */
   cursor: pointer;
 }
 
-.todo-item span::before {
+.todo-item p::before {
   content: ' '; 
   cursor: pointer;
   width: 24px;
@@ -72,13 +78,13 @@ h1 {
   position: absolute;
   left: 12px;
   top: 50%;
-  transform: translateY(-45%);
+  transform: translateY(-50%);
   z-index: 1; /* ← DEBAJO del checkbox real */
   background: white;
 }
 
 
-.todo-item .checkbox:checked ~ span::before{
+.todo-item .checkbox:checked ~ p::before{
   content: '✓'; 
   background: #007bff;
   color: white;
@@ -87,7 +93,7 @@ h1 {
   line-height: 23px;
   font-size: 14px;
 }
- .todo-item .checkbox:hover ~ span::before{
+ .todo-item .checkbox:hover ~ p::before{
   content: '✓'; 
   font-weight: bold;
   color: black;
@@ -98,18 +104,20 @@ h1 {
 }
 
 .todo-item .date {
-  margin-left: auto; /* ← Empuja todo a la derecha */
-  margin-right: 45px; /* ← Espacio antes del botón */
+  margin:auto 45px 0 auto;
   font-size: 14px;
   color: #666;
   opacity: 0.8;
   font-style: italic;
   order: 2; /* ← Asegura que esté antes del botón */
+  
+  
 }
 
 @media screen and (min-width:768px){
   .todo-item{
     width: 68%;
+    font-size: 18px;
   }
 }
 

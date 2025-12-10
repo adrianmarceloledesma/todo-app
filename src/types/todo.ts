@@ -3,4 +3,5 @@ export default interface Todo{
     text:string;
     date:string;
     completed:boolean;
+   
 }

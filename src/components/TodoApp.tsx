@@ -29,7 +29,7 @@ export default function TodoApp() {
       id: Date.now(), // ID único basado en timestamp
       text: inputValue,
       date:new Date().toLocaleDateString('en-US',{month:'short',day:'numeric'}),
-      completed: false,
+      completed: false
     };
     setInputData([...inputData, newInputData]);
   };

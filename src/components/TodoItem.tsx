@@ -10,13 +10,11 @@ interface TodoItemProps {
 
 export default function TodoItem({ element, handleComplete,handleDelete}: TodoItemProps) {
   return (           
-    <div className='todo-item'>
-      <span className="date">{element.date}</span>
-      <p key={element.id} >
+    <div className='todo-item' key={element.id}>
+      <p className="date">{element.completed?`Completed: ${element.date}`:element.date}</p>
         <input type="checkbox" checked={element.completed} onChange={() => handleComplete(element.id)} className='checkbox'/>
-        <span className={element.completed ? 'completed' : ''}>{element.text}</span>{" "}
+        <p className={element.completed ? 'completed' : 'incompleted'}>{element.text}</p>{" "}
         <button onClick={() => handleDelete(element.id)} className='delete-but'> ✗ </button>
-      </p>
     </div>
   );
 }
