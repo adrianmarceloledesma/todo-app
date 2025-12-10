@@ -20,11 +20,12 @@ Modern todo application built with React + TypeScript with localStorage persiste
 ## Quick Start
 
 ```bash
-git clone https://github.com/adrianmarceloledesma/mytasks
-cd mytasks
+git clone https://github.com/adrianmarceloledesma/Accordion
+cd Accordion
 npm install
 npm run dev
-
-Live Demo
-Try it live
 ```
+
+## Live Demo
+
+https://todo-ijxuy0axj-marcelos-projects-a7a6cc0b.vercel.app/
