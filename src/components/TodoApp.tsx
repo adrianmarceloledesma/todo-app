@@ -55,7 +55,7 @@ export default function TodoApp() {
     <div className="container">
       <div className="title-form-container">
        
-        <h1><img src="./tasks.svg" alt="" className="icon"/> MyTasks</h1>
+        <h1><img src="/tasks.svg" alt="icon" className="icon" /> MyTasks</h1>
         
         <form onSubmit={handleSubmit}>
           <input type="text" name="inputTodo" placeholder="Add your new to-do" required/>
