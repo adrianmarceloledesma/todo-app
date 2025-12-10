@@ -33,11 +33,11 @@ npm run dev
 
 ## Live Demo
 
-https://todo-ijxuy0axj-marcelos-projects-a7a6cc0b.vercel.app/
+https://mytasksargentina.netlify.app
 
 ## Preview
 
-![preview](image.png)
+![preview](image-1.png)
 
 ## What I learned
 
