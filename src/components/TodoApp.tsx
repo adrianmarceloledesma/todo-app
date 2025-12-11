@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { FormEvent } from "react";
 import type Todo from "../types/todo";
 import TodoItem from "./TodoItem";
@@ -47,9 +47,16 @@ export default function TodoApp() {
       }
       return e;
     });
-
     setInputData(newInputData);
   };
+  
+  const [completedTitle, setCompletedTitle] = useState(false)
+  useEffect(() => {
+  if (completedCounter === 1) {
+    setCompletedTitle(false); // siempre cerrado al aparecer por primera vez
+  }
+}, [completedCounter]);
+
 
   return (
     <div className="container">
@@ -64,7 +71,7 @@ export default function TodoApp() {
       </div>
 
       
-      <h3>{taskCounter > 0 ? "To-do" : "No tasks yet. Add one above!"}</h3>
+      <h3 className="titleIncomplete">{taskCounter > 0 ? "To-do" : "No tasks yet. Add one above!"}</h3>
       {
         //incomplete
         inputData.map((element) =>
@@ -79,11 +86,11 @@ export default function TodoApp() {
         )
       }
 
-      <h3>{completedCounter > 0 ? "Completed" : null}</h3>
+      {completedCounter > 0 ? <div className="completedAccordion" onClick={()=>setCompletedTitle(!completedTitle)}><h3>Completed</h3><span>{completedTitle? '-':'+'}</span></div> : null}
       {
         // completed
         inputData.map((element) =>
-          element.completed ? (
+          element.completed&&completedTitle? (
             <TodoItem
               key={element.id}
               element={element}
