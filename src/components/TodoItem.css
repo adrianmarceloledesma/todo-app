@@ -28,12 +28,18 @@
     font-size: 20px;
     transition: all 0.5s;
 }
-.todo-item .delete-but:hover{
+.todo-item .delete-but:hover {
     color:red;
-    font-size: 30px;
-    transform: translateY(-70%);
+    font-size: 20px;
+    transform: translateY(-60%) scale(1.2); 
 }
 
+.todo-item .delete-but:active {
+    color:red;
+    font-size: 30px;
+    transform: translateY(-70%) scale(1.2);
+    transition: all 0,2 ease;
+}
 .todo-item .completed{
     text-decoration: line-through;
     color: gray;
