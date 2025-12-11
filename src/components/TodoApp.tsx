@@ -86,7 +86,7 @@ export default function TodoApp() {
         )
       }
 
-      {completedCounter > 0 ? <div className="completedAccordion" onClick={()=>setCompletedTitle(!completedTitle)}><h3>Completed</h3><span>{completedTitle? '-':'+'}</span></div> : null}
+      {completedCounter > 0 ? <div className="completedAccordion" onClick={()=>setCompletedTitle(!completedTitle)}><h3>Completed ({completedCounter})</h3><span>{completedTitle? '-':'+'}</span></div> : null}
       {
         // completed
         inputData.map((element) =>
