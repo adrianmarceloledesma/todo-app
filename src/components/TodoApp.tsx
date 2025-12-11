@@ -71,9 +71,9 @@ export default function TodoApp() {
       </div>
 
       
-      <h3 className="titleIncomplete">{taskCounter > 0 ? "To-do" : "No tasks yet. Add one above!"}</h3>
+      <div className="titleIncomplete"><h3 >{taskCounter > 0 ? "To-do" : "No tasks yet. Add one above!"}</h3> </div>
       {
-        //incomplete
+        //incomplete</div>
         inputData.map((element) =>
           !element.completed ? (
             <TodoItem
