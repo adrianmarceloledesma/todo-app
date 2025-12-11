@@ -17,7 +17,7 @@ h1 {
 }
 .completedAccordion{
   display: flex;
-  width: 95%;
+  width: 96%;
   border: 1px solid;
   border-radius: 5px;
   margin: 10px auto 0 auto;
